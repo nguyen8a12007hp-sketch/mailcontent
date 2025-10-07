@@ -3,15 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <title>Profile Setting</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       padding: 0;
-      font-family: 'Poppins', sans-serif;
       background-color: #F9F9F9; 
       font-size: 16px;
       font-weight: 400;
       color: #000000;
+      font-family: 'Poppins', sans-serif;
     }
     .container {
       display: flex;
@@ -19,9 +20,8 @@
       width: 100%;
     }
 
-    /* SIDEBAR */
     .wrapper-tool {
-      width: 6.5%;
+      width: 78px;
       height: 100%;
       background-color: #FFFFFF;
       display: flex;
@@ -32,7 +32,7 @@
     .tool-list {
       display: flex;
       flex-direction: column;
-      gap: 47px;
+      gap: 20px;
       margin-top: 159px;
       width: 100%;
     }
@@ -155,6 +155,7 @@
       width: 100%;
       height: 856px;
       box-sizing: border-box;
+      border-radius: 8px;
     }
 
     .profile-box {
@@ -203,12 +204,6 @@
       border: none;
       padding: 12px 32px;
       border-radius: 8px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-
-    .btn-edit:hover {
-      background-color: #346ad8;
     }
 
     .form {
@@ -268,18 +263,18 @@
     }
 
     .email-icon {
-      width: 36px;
-      height: 36px;
+      width: 48px;
+      height: 48px;
       border-radius: 50%;
-      background-color: #F9F9F9;
+      background-color: rgba(65, 130, 249, 0.1);
       display: flex;
       justify-content: center;
       align-items: center;
     }
 
     .email-icon img {
-      width: 16px;
-      height: 12px;
+      width: 24px;
+      height: 24px;
     }
 
     .email-details {
@@ -306,10 +301,6 @@
     .add-email p {
       margin: 0px 0px;
       color: #4182F9;
-    }
-
-    .add-email:hover {
-      background-color: #c1d4ff;
     }
 
   </style>
@@ -340,8 +331,8 @@
     <div class="content">
       <header class="header">
         <div class="welcome">
-          <p style="color: #3E435D; font-weight: 500; font-size: 24px;"> Welcome, AMANDA </p>
-          <p style="color: #ADA7A7;">Tue, 07 June 2022</p>
+          <p style="color: #3E435D; font-weight: 500; font-size: 24px;"> Welcome, Amanda </p>
+          <p style="color: #ADA7A7; font-weight: 200">Tue, 07 June 2022</p>
         </div>
         <div class="search-container">
           <div class="search-box">
@@ -428,7 +419,7 @@
                 <p style="opacity: 0.5;">1 month ago</p>
               </div>
             </div>
-            <button class="add-email">+Add Email Address</button>
+            <button class="add-email"><p>+Add Email Address</p></button>
           </div>
         </div>
       </section>
