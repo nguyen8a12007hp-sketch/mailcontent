@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Profile Setting</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #F9F9F9; 
+      font-size: 16px;
+      font-weight: 400;
+      color: #000000;
+    }
+    .container {
+      display: flex;
+      height: 1024px;
+      width: 100%;
+    }
+
+    /* SIDEBAR */
+    .wrapper-tool {
+      width: 6.5%;
+      height: 100%;
+      background-color: #FFFFFF;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .tool-list {
+      display: flex;
+      flex-direction: column;
+      gap: 47px;
+      margin-top: 159px;
+      width: 100%;
+    }
+
+    .tool-item {
+      width: 100%;
+      height: 58px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .tool-item img {
+      width: 24px;
+      height: 24px;
+    }
+
+    .tool-item.active {
+      background: linear-gradient(269.84deg, #bed0f3 -38.97%, rgba(65, 130, 249, 0.00520833) 90.01%);
+    }
+
+    .content {
+      width: 93.5%;
+      padding: 32px 48px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 72px;
+    }
+
+    .welcome {
+      width: 233px;
+      height: 100%;
+      margin: 2px 0;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .welcome p {
+      margin: 0;
+    }
+
+    .search-container {
+      width: 498px;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .search-box {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0 12px;
+      width: 354px;
+      height: 100%;
+      background-color: #FFFFFF;
+    }
+
+    .search-box img {
+      width: 24px;
+      height: 24px;
+    }
+
+    .search-box input {
+      border: none;
+      outline: none;
+      color: #ADA7A7;
+      width: 300px;
+      background: transparent;
+    }
+
+    .icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 8px;
+      background-color: #FFFFFF; 
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .icon img {
+      width: 100%;
+      height: 100%;
+    }
+
+    .avatar {
+      width: 52px;
+      height: 52px;
+      border-radius: 12px;
+    }
+
+    .banner {
+      width: 100%;
+      height: 100px;
+      margin: 0;
+    }
+
+    .banner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .center {
+      background-color: #FFFFFF; 
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 856px;
+      box-sizing: border-box;
+    }
+
+    .profile-box {
+      height: 653px;
+      background-color: #FFFFFF;
+      padding: 32px;
+      margin-top: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .center-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .center-header-left {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .center-header-left img.avatar-big {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .center-header-left .info {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .center-header-left .info p {
+      margin: 0;
+    }
+
+    .btn-edit {
+      background-color: #4182F9;
+      color: #FFFFFF;
+      border: none;
+      padding: 12px 32px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-edit:hover {
+      background-color: #346ad8;
+    }
+
+    .form {
+      height: 314px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px 48px;
+    }
+
+    .form label {
+      font-weight: 400;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .select-box {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 16px;
+      background-color: #F9F9F9;
+      border-radius: 8px;
+    }
+
+    .select-box p {
+      opacity: 0.4;
+      margin: 0;
+    }
+
+    .select-box img {
+      width: 16px;
+      height: 16px;
+    }
+
+    .email-section {
+      width: 266px;
+      height: 177px;
+      background-color: #FFFFFF;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .email-content {
+      width: 100%;
+      height: 54px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .wrapper-email {
+      width: 100%;
+      height: 54px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .email-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background-color: #F9F9F9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .email-icon img {
+      width: 16px;
+      height: 12px;
+    }
+
+    .email-details {
+      width: 198px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .email-details p {
+      margin: 0;
+    }
+
+    .add-email {
+      width: 209px;
+      height: 44px;
+      background-color: rgba(65, 130, 249, 0.1);
+      border-radius: 8px;
+      border: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .add-email p {
+      margin: 0px 0px;
+      color: #4182F9;
+    }
+
+    .add-email:hover {
+      background-color: #c1d4ff;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <div class="wrapper-tool">
+      <div class="tool-list">
+        <div class="tool-item active">
+          <img src="element-4.png" />
+        </div>
+        <div class="tool-item">
+          <img src="graph.png" />
+        </div>
+        <div class="tool-item">
+          <img src="medal-star.png" />
+        </div>
+        <div class="tool-item">
+          <img src="messages.png" />
+        </div>
+        <div class="tool-item">
+          <img src="setting-2.png" />
+        </div>
+      </div>
+    </div>
+
+    <div class="content">
+      <header class="header">
+        <div class="welcome">
+          <p style="color: #3E435D; font-weight: 500; font-size: 24px;"> Welcome, AMANDA </p>
+          <p style="color: #ADA7A7;">Tue, 07 June 2022</p>
+        </div>
+        <div class="search-container">
+          <div class="search-box">
+            <img src="search.png" alt="Search">
+            <input type="text" placeholder="Search">
+          </div>
+          <div class="icon">
+            <img src="bell.png">
+          </div>
+          <img src="picture.png" alt="User Avatar" class="avatar" />
+        </div>
+      </header>
+
+      <section class="center">
+        <div class="banner"><img src="color.png"></div>
+
+        <div class="profile-box">
+          <div class="center-header">
+            <div class="center-header-left">
+              <img src="avatar.png" alt="Avatar" class="avatar-big" />
+              <div class="info">
+                <p style="font-size: 20px; font-weight: 500;">Alexa Rawles</p>
+                <p style="opacity: 0.5;">alexarawles@gmail.com</p>
+              </div>
+            </div>
+            <button class="btn-edit">Edit</button>
+          </div>
+
+          <form class="form">
+            <div>
+              <label for="fullname">Full Name</label>
+              <div class="select-box">
+                <p>Your First Name</p>
+                <img src="dropdown.png" alt="Dropdown" />
+              </div>
+            </div>
+            <div>
+              <label for="nickname">Nick Name</label>
+              <div class="select-box">
+                <p>Your Nick Name</p>
+                <img src="dropdown.png" alt="Dropdown" />
+              </div>
+            </div>
+            <div>
+              <label for="gender">Gender</label>
+              <div class="select-box">
+                <p>Your Gender</p>
+                <img src="dropdown.png" alt="Dropdown" />
+              </div>
+            </div>
+            <div>
+              <label for="country">Country</label>
+              <div class="select-box">
+                <p>Your Country</p>
+                <img src="dropdown.png" alt="Dropdown" />
+              </div>
+            </div>
+            <div>
+              <label for="language">Language</label>
+              <div class="select-box">
+                <p>Your Language</p>
+                <img src="dropdown.png" alt="Dropdown" />
+              </div>
+            </div>
+            <div>
+              <label for="timezone">Time Zone</label>
+              <div class="select-box">
+                <p>Your Time Zone</p>
+                <img src="dropdown.png" alt="Dropdown" />
+              </div>
+            </div>
+          </form>
+
+          <div class="email-section">
+            <div class="wrapper-email">
+              <p style="font-size: 18px; font-weight: 500;">My email Address</p>
+            </div>
+            <div class="email-content">
+              <div class="email-icon">
+                <img src="Vector.png" alt="Email icon" />
+              </div>
+              <div class="email-details">
+                <p>alexarawles@gmail.com</p>
+                <p style="opacity: 0.5;">1 month ago</p>
+              </div>
+            </div>
+            <button class="add-email">+Add Email Address</button>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</body>
+</html>
